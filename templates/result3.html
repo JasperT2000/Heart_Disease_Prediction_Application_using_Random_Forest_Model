@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    html {
+    background-color: #fbee22;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: red;
+    font-size: 10px;
+}
+
+.content {
+    text-align: center;
+    padding: 100px 100px 100px 100px;
+}
+
+.header {
+    overflow: hidden;
+    background-color: rgba(241, 250, 238, 0.2);
+
+}
+
+.header a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+
+.header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.header a:hover {
+    background-color: rgba(241, 250, 238, 0.2);
+    color: black;
+}
+
+.header a.active {
+    background-color: rgba(235, 13, 68, 0.349);
+    color: white;
+}
+
+.header-right {
+    float: right;
+}
+
+div.a {
+  color: black;
+  text-align: center;
+}
+
+
+@media screen and (max-width: 500px) {
+    .header a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    .header-right {
+        float: none;
+    }
+}
+
+#logo {
+    max-width: 80px;
+    max-height: 80px;
+    object-fit: cover;
+    overflow: hidden;
+    position: absolute;
+    transform: translateY(-34.378%);
+}
+
+#output-text {
+    color: black;
+}
+</style>
+</html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <title>Result</title>
+</head>
+<body>
+    <header class="header">
+        <a href="#default" class="logo"><img src="static\logo.png" alt="The logo of the website" id="logo"></a>
+        <nav class="header-right">
+            <a href='/'>Home</a>
+            <!-- Write your comments here <a href="results.html">Results</a>
+            <a class="active" href="about.html">About</a>  -->
+        </nav>
+        <nav>
+            <div class="a">
+           <h2 style="font-size:260%" >YELLOW ZONE</h2>
+        </div>
+        </nav>
+    </header>
+    <section class="main-container">
+        <div class="content">
+            <p style="font-size:260%;"> You are safe now but there are <mark>{{disease_chances}}%</mark> chances that you might end up being an heart patient. Follow proper diet.</p>
+            <img src="static\diet.jpeg" alt="Diet">
+        </div>
+    </section>
+    <script src="index.js"></script>
+</body>
+</html>

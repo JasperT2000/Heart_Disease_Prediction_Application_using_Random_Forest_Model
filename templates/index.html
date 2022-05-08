@@ -1,0 +1,136 @@
+<html>
+	<head>
+	<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+		<title>HEART DISEASE PREDICTION SYSTEM</title>
+	</head>
+	<body>
+	<!-- Java Script -->
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+
+		<!-- Navbar-->
+		<nav class="navbar navbar-dark bg-dark">
+			<span class="navbar-brand mb-0 h1">HEART DISEASE PREDICTION SYSTEM</span>
+			<a class="active" href="index.html">Home</a>
+		</nav>
+		<div class="container">
+			<br>
+			<!--Form-->
+			<form action = "{{url_for('predict')}}" method ="POST" >
+				<fieldset>
+				<legend>PATIENT DETAILS</legend><br>
+				  <div class="card card-body" >
+					  <div class="form-group  row">
+						<div class="col-sm-4">
+							<label for="age">Age</label>
+							<input type="number" class="form-control" id="age" name="age" required>
+						</div>
+						<div class="col-sm-4">
+							<label for="gender">Gender</label>
+							<select class="form-control" id="gender"  name="gender" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">Female</option>
+							  <option value = "1">Male</option>
+							</select>
+					   </div>
+
+
+
+						  <div class="col-sm-4">
+							<label for="cpt">Chest Pain Type</label>
+							<select class="form-control" id="cpt" name = "cpt" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">Asymptomatic</option>
+							  <option value = "1">Atypical Angina</option>
+							  <option value = "2">Non-anginal Pain</option>
+							  <option value = "3">Typical Angina</option>
+							</select>
+						  </div>
+				         </div>
+						  <br>
+						  <div class="form-group row">
+						  <div class="col-sm">
+							<label for="rbp">Resting Blood Pressure</label>
+							<input type="number" class="form-control" id="rbp" name="rbp"  required>
+						  </div>
+						  <div class="col-sm">
+							<label for="chol">Cholesterol (mg/dl)</label>
+							<input type="number" class="form-control" id="chol" name="chol" required>
+						  </div>
+						  </div>
+						  <br>
+						  <div class="form-group row">
+                           <div class="col-sm">
+							<label for="fbs">Fasting Blood Sugar > 120 mg/dl</label>
+							<select class="form-control" id="fbs" name="fbs" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">NO</option>
+							  <option value = "1">YES</option>
+							</select>
+						</div>
+
+
+
+
+							<div class="col-sm">
+								<label for="ecg">Resting ECG Results </label>
+								<select class="form-control" id="ecg" name="ecg" required>
+								  <option disabled selected value> -- Select an Option -- </option>
+								  <option value = "0">Probable or definite left ventricular hypertrophyNormal</option>
+								  <option value = "1">Normal  </option>
+								  <option value = "2">Having ST-T wave abnormality  </option>
+								</select>
+							  </div>
+							  <div class="col-sm">
+								<label for="mhr">Maximum Heart Rate</label>
+								<input type="number" class="form-control" id="mhr" name="mhr" required>
+							  </div>
+						  </div>
+							  <br>
+							  <div class="form-group  row">
+							  <div class="col-sm">
+								<label for="exer">Exercise Induced Angina </label>
+								<select class="form-control" id="exer" name="exer" required>
+								  <option disabled selected value> -- Select an Option -- </option>
+								  <option value = "0">No</option>
+								  <option value = "1">Yes</option>
+								</select>
+							  </div>
+
+
+
+							  <div class="col-sm">
+							<label for="oldpeak">Oldpeak value</label>
+							<input type="number" step="any" class="form-control" id="oldpeak" name="oldpeak" required>
+						  </div>
+						  <div class="col-sm">
+							<label for="st">Slope of the Peak Exercise ST Segment </label>
+							<select class="form-control" id="st" name="st" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">Downsloping</option>
+							  <option value = "1">Flat</option>
+							  <option value = "2">Upsloping</option>
+							</select>
+						  </div>
+							  </div>
+					  </div>
+					  <br>
+					  <div class="form-group">
+						<input class="btn btn-primary" type="submit" value="Result">
+					  </div>
+
+
+
+			 </fieldset>
+			</form>
+
+		</div>
+
+	</body>
+</html>
